@@ -1,5 +1,5 @@
     html {
-    overflow:   scroll;
+    overflow: scroll;
   }
   
 ::-webkit-scrollbar {
@@ -9,37 +9,42 @@
 
 * {
     font-family: 'Poppins', sans-serif;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
+    color: #18314F
 }
 
+/* currently not on anything but possibly put onto .cartCard? */
 .hidden {
     max-height: 150rem;
     display:none;
     transition: 2s;
+}
+/* doesn't exist until View Cart button is clicked */
+.cartCard {
+    display:flex;
+    align-self: center;
+    justify-self: center;
+    transition: 2s;
+    height: 15rem;
+    width: 10rem;
+    background: linear-gradient(
+        to right bottom,
+      rgba(255, 255, 255, 0.616),
+      rgba(255, 255, 255, 0.384));
+    z-index: 6;
 }
 
 section {
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 100%;
+    /* height: 100%; */
 }
 
 a {
     text-decoration: none;
 }
 
-.viewCartText:hover {
-    transform: scale(1.25);
-    transition: .6s;
-    text-shadow: .25rem .25rem 2rem #000;
-}
-
-.viewCart:hover {
-    /* transform: scale(1.05); */
-    transition: 1s;
-    box-shadow: .05rem .05rem 2rem rgb(75, 75, 75, .5);
-}
 
 h1 {
     font-size: 1.10rem;
@@ -59,9 +64,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(147,142,246);   
-    background: linear-gradient(60deg, rgba(147,142,246,1) 0%, rgba(147,142,246,0.7651435574229692) 64%, rgba(147,142,246,1) 100%);
-    
+    /* background: rgb(147,142,246);   
+    background: linear-gradient(60deg, rgba(147,142,246,1) 0%, rgba(147,142,246,0.7651435574229692) 64%, rgba(147,142,246,1) 100%); */
+    background: rgb(13,6,48);
+    background: linear-gradient(60deg, rgba(13,6,48,1) 0%, rgba(24,49,79,1) 57%, rgba(13,6,48,1) 100%);
 }
 
 .main {
@@ -70,15 +76,14 @@ body {
     height: 75vh;
     width: 65vw;
     border-radius: 2rem;
-    /* background: rb(0, 0, 0, .8); */
     z-index: 2;
-    box-shadow: .5rem .5rem 2rem rgba(103, 102, 122, 0.2);
+    box-shadow: 2rem 2rem 2rem rgba(103, 102, 122, 0.2);
     overflow:scroll;
     backdrop-filter: blur(1rem);
     background: linear-gradient(
         to right bottom,
-      rgba(255,255,255,0.5),
-      rgba(255,255,255,0.2));
+      rgba(255, 255, 255, 0.616),
+      rgba(255, 255, 255, 0.384));
 }
 
 .left {
@@ -102,20 +107,38 @@ body {
     margin-top: 4rem;
     align-self: flex-start;
     margin-right: 3rem;
-
 }
 
 .subtotal .tax .total {
     text-align: left;
+    margin: 4rem 0;
 }
 
 .viewCart {
     margin: 3rem 0 0 0;
     border-radius: 2rem;
+    padding: 1rem 4rem;
+}
+
+.cart {
+    height: 5rem;
+}
+
+.addToCart:hover {
+    transform: scale(1.10);
+    transition: .6s;
+    /* text-shadow: .25rem .25rem 2rem #000; */
+    text-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
+
+}
+
+.viewCart:hover {
+    transition: 1s;
+    box-shadow: .05rem .05rem 2rem rgb(75, 75, 75, .5);
 }
 
 .viewCartText {
-    /* padding-bottom: */
+    margin: 0;
 }
 
 .right {
@@ -123,6 +146,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     flex: 3;
+    overflow: scroll;
 }
 
 .products-card {
@@ -135,7 +159,7 @@ body {
     align-items: center;
     flex-direction: column;
     box-shadow: .5rem .5rem 2rem rgba(103, 102, 122, 0.2);
-    margin: .75rem .75rem 4rem .75rem;
+    margin: .75rem .75rem .75rem .75rem;
     background: linear-gradient(
         to right bottom,
       rgba(255,255,255,0.5),
@@ -144,27 +168,40 @@ body {
 
 .products-card:hover {
     transform: scale(1.25);
-    transition: height 0.2s ease-out;
+    /* transition: all 500ms cubic-bezier(0.25, 0.25, .75, .75) 0s; 
+    /* transition-timing-function: cubic-bezier(0.875, 0.000, 1.000, 1.000);  */
+    transition: height 2s ease-out; 
     transition: all 1s ease-out;
-    /* transition: height 03s; */
     box-shadow: 4rem 4rem 8rem rgba(54, 54, 65, 0.8);
     z-index: 5;
     background: linear-gradient(
         to right bottom,
       rgba(255,255,255, 0.9),
       rgba(255,255,255, 0.5));
-    
-    max-height: 25rem;
-
-
+    /* overflow: visible; */
+    /* below moves card up --- can i move up, pause, and *then* elongate? */
+    /* transform: translateY(-5rem); */
 }
 
 
 
-    img {
+    .cardImage {
     height: 10rem;
     width: 7rem;
 
+}
+
+.slideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
 }
 
 
