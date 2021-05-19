@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <title>POS</title>
 </head>
@@ -14,53 +14,116 @@
     
     <div class="main">
         <div class="left"> 
-            <h1>Ancient Artifacts R Us</h1>
+            <h1>Store Name Here</h1>
 
-            <div class="checkOutTotals">
+            <div class="check-out-totals">
                 <h2 class="subtotal">Subtotal:</h2>
                 <h2 class="tax">Sales Tax:</h2>
                 <h3 class="total">Total:</h3>
             </div>
-           <div class="viewCart">
+           <div class="view-cart">
                 <a href="#" ><img class="cart" src="./images/emptyCart.svg"></a>
-                <a href="#"> <h4 class="viewCartText"></h4>View Cart</h4></a>
+                <a href="#"> <h4 class="view-cart-text"></h4>View Cart</h4></a>
             </div>
         </div>
         
         
         <div class="right disable-scrollbars">
-            <h2>The Booty</h2>
+            <h2 class="booty">Products</h2>
+            
             <section class="row-one">
-                <h1>Dead Languages</h1> 
+                <h1 class="categories">Category</h1>
                 <div class="products-card">
-                    <h2 class="cardHeader">The Dead Sea Scrolls</h2>
-                    <img class="cardImage" src="./images/deadSeaScrolls.svg">
-                    <h3 class="cardPrice">$32,000</h3>
-                    <a href="#"><h4 class="addToCart">Add to Cart</h4></a>
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$100</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <div class="description">
+                        <h5>Description</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                    </div>
+                </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$100</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
                     <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
                 </div>
-                <div class="products-card">The Rosetta Stone </div>
             </section>
 
             <section class="row-two"> 
-                <div class="products-card">Thor's Hammer </div>
-                <div class="products-card">Zues' Lightning Bolt </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$100</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$100</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
 
             </section>
         
             <section class="row-three"> 
-                <div class="products-card">Suit of Armor </div>
-                <div class="products-card">Loin Cloth </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$40</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$30</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
             </section>
             
             <section class="row-four"> 
-                <div class="products-card">Mule and Buggy </div>
-                <div class="products-card">Golden Chariot </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$80</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                    </div>
+                
+                
+                </div>
+
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$150</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
             </section>
         
             <section class="row-five"> 
-                <div class="products-card">Mario's Mushroom</div>
-                <div class="products-card">Link's Sword</div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$200</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
+                <div class="products-card">
+                    <h2 class="card-header">Card Header</h2>
+                    <img class="card-image" src="./images/kitty.svg">
+                    <h3 class="card-price">$300</h3>
+                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                </div>
             </section>
         </div>
         </div>  
@@ -72,8 +135,14 @@
     <!--
         10 products with category, description, and price
     -->
+    <!-- DO CART AS A TABLE?! -->
+    <div class="shopping-cart hidden">
+        <h1>Shopping Cart</h1>
+        <h2 class="subtotal">Subtotal:</h2>
+        <h2 class="tax">Sales Tax:</h2>
+        <h3 class="total">Total:</h3>
 
-
+    </div>
 
 
 
