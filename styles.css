@@ -31,8 +31,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     height: 100%;
+    width: 90%;
 }
 
 a {
@@ -72,7 +73,6 @@ body {
 .main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     height: 85vh;
     width: 90vw;
     border-radius: 1rem;
@@ -161,7 +161,7 @@ body {
     box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
     z-index: 5;
 }
-/* STOPPED HERE FOR THE NIGHT - MAKING MOBILE FIRST DISPLAY */
+
 .right {
     display: flex;
     flex-direction: column;
@@ -169,7 +169,8 @@ body {
     align-items: center;
     flex: 3;
     overflow: scroll;
-    height: 100%;
+    /* height: 100%; */
+    position: relative;
     z-index: 2;
 }
 
@@ -177,43 +178,40 @@ body {
     display: flex;
     overflow: hidden;
     height: 20rem;
-    width: 14rem;
+    width: 80%;
     border-radius: .5rem;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     box-shadow: .5rem .5rem 2rem rgba(103, 102, 122, 0.2);
     margin: .75rem .75rem .75rem .75rem;
-    
     background: linear-gradient(
         to right bottom,
     rgba(255,255,255,0.5),
     rgba(255,255,255,0.2));
+    position: relative;
     
 }
 
 .card-price {
-    margin-top: 2rem;
+    margin: .5rem 0;
 }
 .products-card:hover {
     /* transition: all 1s ease-out; */
     transform: scale(1.15);
     transition-duration: 1.8s;
     box-shadow: 4rem 4rem 8rem rgba(54, 54, 65, 0.8);
-    
     background: linear-gradient(
         to right bottom,
     rgba(255,255,255, 0.9),
     rgba(255,255,255, 0.5));
-    /* height: 100%; */
-    /* overflow: scroll; */
     /* height: auto; */
-    position: relative;
+    /* overflow: hidden; */
     z-index: 5;
-    transition: margin-bottom 2s s;
+    /* maybe cut if animation won't work */
 }
 
-
+/* animation setup */
 @keyframes card-drop {
     from {
         transform:scale(1.25);
@@ -223,27 +221,59 @@ body {
     }
 }
 
-.description {
+.description-box {
     display: flex;
     align-items:center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    margin-top: .5rem;
     /* overflow: hidden; */
+    /* overflow: scroll; */
     /* margin: 3rem; */
     /* animation attempt */
+    background: rgba(255,255,255, .5);
+  /* overflow: hidden; */
+  /* line-height: 50px; */
+    transition: all 1s ease-in-out;
+  /* height: 20rem; */
 }
 
-.description[p] {
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.5s all;
+.description-header {
+    max-height: 1rem;
 }
 
-#description:hover {
+.description-box:hover{
+    height: 20rem;
+    background: rgba(255,255,255);
+    position: absolute;
+    padding: .5rem;
+
+    /* transition: all .5s ease-in-out; */
+    /* z-index: 10; */
+
+    /* transform: scale(1.10);
+    transition: .6s;
+    text-shadow: .25rem .25rem 2rem #000; */
+    /* transition: margin-bottom 5s;
     transition: padding-bottom 2s .5s;
     overflow: visible;
+    animation-name: card-drop;
+    animation-direction: normal;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-timing-function: ease; */
+}
+
+/* .description {
+    visibility: hidden;
+} */
+
+.description:hover {
     
-    /* animation-name: grow; */
+    /* transition: margin-bottom 5s; */
+    /* transition: padding-bottom 2s .5s; */
+    /* overflow: visible; */
     /* animation-name: card-drop;
     animation-direction: normal;
     animation-delay: 1s;

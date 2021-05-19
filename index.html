@@ -1,166 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    <title>POS</title>
-</head>
-<body>
-    
-    <div class="main">
-        <div class="left"> 
-            <h1>Store Name Here</h1>
+        <title>POS</title>
+    </head>
+    <body>
+        
+        <div class="main">
+            <div class="left"> 
+                <h1>Store Name Here</h1>
 
-            <div class="check-out-totals">
+                <div class="check-out-totals">
+                    <h2 class="subtotal">Subtotal:</h2>
+                    <h2 class="tax">Sales Tax:</h2>
+                    <h3 class="total">Total:</h3>
+                </div>
+            <div class="view-cart">
+                    <a href="#" ><img class="cart" src="./images/emptyCart.svg"></a>
+                    <a href="#"> <h4 class="view-cart-text"></h4>View Cart</h4></a>
+                </div>
+            </div>
+            
+            
+            <div class="right disable-scrollbars">
+                <h2 class="booty">Products</h2>
+                
+                <section class="row-one">
+                    <h1 class="categories">Category</h1>
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$100</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$100</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>      
+                </section>
+
+                <section class="row-two">
+                    <h1 class="categories">Category</h1>
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$100</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>                    
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$100</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>   
+                    </div>                           
+
+                </section>
+                <!-- test card -->
+                <section class="row-three">
+                    <h1 class="categories">Category</h1> 
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$40</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div> 
+                    </div>                                  
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$30</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>                                 
+                </section>
+                
+                <section class="row-four">
+                    <h1 class="categories">Category</h1> 
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$80</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>
+
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$150</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>  
+                    </div>                                
+                </section>
+            
+                <section class="row-five">
+                    <h1 class="categories">Category</h1>
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$200</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div>
+                    </div>                                 
+                    <div class="products-card">
+                        <h2 class="card-header">Card Header</h2>
+                        <img class="card-image" src="./images/kitty.svg">
+                        <h3 class="card-price">$300</h3>
+                        <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
+                        <div class="description-box">
+                            <h5 id="description-header">Description</h5>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
+                        </div> 
+                    </div>                               
+                </section>
+            </div>
+
+
+
+
+
+        </div>
+        <!--
+            10 products with category, description, and price
+        -->
+        <!-- DO CART AS A TABLE?! -->
+        <div class="shopping-cart hidden">
+            <h1>Shopping Cart</h1>
+            <div class="cart-wrapper">
+
+            </div>
+            <div>
                 <h2 class="subtotal">Subtotal:</h2>
-                <h2 class="tax">Sales Tax:</h2>
-                <h3 class="total">Total:</h3>
+            <h2 class="tax">Sales Tax:</h2>
+            <h3 class="total">Total:</h3>
             </div>
-           <div class="view-cart">
-                <a href="#" ><img class="cart" src="./images/emptyCart.svg"></a>
-                <a href="#"> <h4 class="view-cart-text"></h4>View Cart</h4></a>
-            </div>
-        </div>
-        
-        
-        <div class="right disable-scrollbars">
-            <h2 class="booty">Products</h2>
             
-            <section class="row-one">
-                <h1 class="categories">Category</h1>
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$100</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <div class="description">
-                        <h5 id="decription">Description</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                    </div>
-                </div>
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$100</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-            </section>
-
-            <section class="row-two">
-                <h1 class="categories">Category</h1>
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$100</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$100</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-
-            </section>
-        
-            <section class="row-three">
-                <h1 class="categories">Category</h1> 
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$40</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$30</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-            </section>
-            
-            <section class="row-four">
-                <h1 class="categories">Category</h1> 
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$80</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                    </div>
-                
-                
-                </div>
-
-                <div class="products-card">
-                    <h1 class="categories">Category</h1>
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$150</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-            </section>
-        
-            <section class="row-five">
-                <h1 class="categories">Category</h1>
-                <h1 class="categories">Category</h1> 
-                <div class="products-card">
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$200</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-                <div class="products-card">
-                    <h1 class="categories">Category</h1>
-                    <h2 class="card-header">Card Header</h2>
-                    <img class="card-image" src="./images/kitty.svg">
-                    <h3 class="card-price">$300</h3>
-                    <button class="add-to-cart-button" type="button" data-price="100" data-name="Dead Sea Scrolls">Add to Cart</button>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quia inventore quisquam quod repudiandae necessitatibus molestias. Alias vero beatae sed. Ut aliquam dolor sed blanditiis ipsam vel veniam rem cupiditate?</p>
-                </div>
-            </section>
-        </div>
-        </div>  
-
-
-
-
-    </div>
-    <!--
-        10 products with category, description, and price
-    -->
-    <!-- DO CART AS A TABLE?! -->
-    <div class="shopping-cart hidden">
-        <h1>Shopping Cart</h1>
-        <div class="cart-wrapper">
 
         </div>
-        <div>
-            <h2 class="subtotal">Subtotal:</h2>
-        <h2 class="tax">Sales Tax:</h2>
-        <h3 class="total">Total:</h3>
-        </div>
-        
-
-    </div>
 
 
 
-    <script src="./script.js" text="text/JavaScript"></script>
-</body>
+        <script src="./script.js" text="text/JavaScript"></script>
+    </body>
 </html>
 
 
