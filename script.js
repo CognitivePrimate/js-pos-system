@@ -1,49 +1,83 @@
-const section = document.querySelectorAll("section");
-const right = document.querySelector(".right");
-right.addEventListener("scroll", (event) => {
-    console.log("scrolled");
-})
+// const section = document.querySelectorAll("section");
+// right.addEventListener("scroll", (event) => {
+//     console.log("scrolled");
+//     // for animated sticky scroll??
+// })
 
 // left side totals & purchasing variables
-let subtotal = document.querySelector(".subtotal");
+let subTotal = document.querySelector(".sub-total");
 let tax = document.querySelector(".tax");
 let total = document.querySelector(".total");
 let viewCart = document.querySelector(".view-cart");
 let addToCart = document.querySelectorAll(".add-to-cart-button");
+let newTotal = 0;
 
-viewCart.addEventListener("click", event => {
+// add to cart process
+let right = document.querySelector(".right");
+let productCards = document.querySelectorAll(".products-card");
+
+// add to cart visual representation variables
+let cart = [];
+const shoppingCart = document.querySelector(".shopping-cart");
+let cartWrapper = document.querySelector(".cart-wrapper");
+let cartNameHolder = document.querySelector(".cart-product-name");
+let cartQuantityHolder = document. querySelector(".cart-change-quanity");
+let cartProductPriceHolder = document.querySelector(".cart-product-price");
+
+// add to cart visual representation wiring
+// create p tag to insert item.name et al
+viewCart.addEventListener("click", (event) => {
     event.preventDefault();
-    document.createElement("div").setAttribute("class", "cartCard");
-    console.log("clicked");
-    console.log(queryselector(".cartCard"))
+    for (item of cart){
+        let cartItemNameDisplay = document.createElement("p");
+        cartItemNameDisplay.innerText = item.name;
+        cartNameHolder.appendChild(cartItemNameDisplay);
+        
+        let cartQuantityHolder = "something to fix";
+
+        let cartPriceDisplay = document.createElement("p");
+        cartPriceDisplay.innerText = item.price;
+        cartProductPriceHolder.appendChild(cartPriceDisplay);
+    }
+    let cartToggle = shoppingCart.toggle(".hidden");
+    // let cartToggle = () => shoppingCart.toggle("hidden");
+    // cartToggle();
 });
+
+
 
 // add to cart event
 right.addEventListener("click", (event) => {
-    const addPrice = event.target.getAttribute("data-price");
-    const addName = event.target.getAttribute("data-name");
-
-    
-    // test
-    let newTotal = 0;
-        newTotal += addPrice;
-    // test
-
     if (event.target.classList.contains("add-to-cart-button")){
-        subtotal.innerText = `Subtotal: $${newTotal}`;
-        tax.innerText = `Sales Tax: $${newTotal * .06}`;
-        
-        
-        console.log(parseInt(subtotal.innerText));
-        total.innerText = `Total: ${parseInt(tax.innerText) + parseInt(subtotal.innerText)}`;
+        const addPrice = event.target.getAttribute("data-price")
+        const addName = event.target.getAttribute("data-name");
+    let newCartObject = {}
+        newCartObject.name = addName;
+        newCartObject.price = addPrice;
+        cart.push(newCartObject);
+        console.log(cart);
+  
+    //new cartObject
+
+    newTotal += parseInt(addPrice) / 100;
+    let taxTotal = .06 * newTotal;
+    let grandTotal = newTotal + taxTotal;
+
+
+    // grab selected item
+        console.log(subTotal.innerText);
+        subTotal.innerText = `Subtotal: ${newTotal}`;
+        tax.innerText = `Tax: ${taxTotal}`;
+        total.innerText = `Total ${grandTotal}`;
+
     }
-    console.log(subtotal);
-    console.log(subtotal.innerText);
-    console.log(subtotal.innerText);
-    console.log(add-to-cart-button.length);
     // add slected item Name & price to cart
 
 })
+    // add slected item Name & price to cart
+
+// TERNARY OPERATOR FOR CC VALIDATION! 
+// user.input === number ? alert : submit
 
 
 

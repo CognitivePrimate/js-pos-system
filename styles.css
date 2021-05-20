@@ -130,7 +130,7 @@ body {
     margin: 0;
     border-radius: 2rem;
     width: 6rem;
-    padding: .4rem;
+    padding: 2rem, .4rem, 0, .4rem;
 }
 
 .view-cart:hover {
@@ -143,8 +143,9 @@ body {
     display: none;
 }
 
-.cart {
+.cart-image {
     height: 4rem;
+    padding-top: .2rem;
 }
 
 .add-to-cart-button {
@@ -253,8 +254,9 @@ body {
 .description-box:hover{
     height: 20rem;
     background: rgba(255,255,255);
-    position: absolute;
+    /* position: absolute; */
     padding: .5rem;
+    /* margin-bottom: 20rem; */
 
     /* transition: all .5s ease-in-out; */
     /* z-index: 10; */
@@ -270,11 +272,24 @@ body {
     animation-delay: 1s;
     animation-duration: 3s;
     animation-timing-function: ease; */
+    animation: MoveUpDown .7s linear;
+    position: absolute;
+    /* left: 0;
+    bottom: 0; */
 }
 
 /* .description {
     visibility: hidden;
 } */
+/* test 2 */
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 
 .description:hover {
     
@@ -440,7 +455,7 @@ body {
         padding: 1rem 4rem;
     }
 
-    .cart {
+    .cart-image {
         height: 5rem;
     }
 
