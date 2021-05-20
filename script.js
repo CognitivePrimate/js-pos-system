@@ -18,7 +18,9 @@ let productCards = document.querySelectorAll(".products-card");
 
 // add to cart visual representation variables
 let cart = [];
-const shoppingCart = document.querySelector(".shopping-cart");
+// IMPORTANT FOR CLASS
+const shoppingCart = document.querySelector(".hidden");
+// IMPORTANT FOR CLASS
 let cartWrapper = document.querySelector(".cart-wrapper");
 let cartNameHolder = document.querySelector(".cart-product-name");
 let cartQuantityHolder = document. querySelector(".cart-change-quanity");
