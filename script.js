@@ -39,9 +39,9 @@ viewCart.addEventListener("click", (event) => {
         cartPriceDisplay.innerText = item.price;
         cartProductPriceHolder.appendChild(cartPriceDisplay);
     }
-    let cartToggle = shoppingCart.toggle(".hidden");
-    // let cartToggle = () => shoppingCart.toggle("hidden");
-    // cartToggle();
+    // let cartToggle = shoppingCart.toggle(".hidden");
+    let cartToggle = () => shoppingCart.classList.toggle("shopping-cart");
+    cartToggle();
 });
 
 
