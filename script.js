@@ -49,26 +49,45 @@ right.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart-button")){
         const addPrice = event.target.getAttribute("data-price")
         const addName = event.target.getAttribute("data-name");
+        // can't initialize below
+        // const newCartObjectQuantity = newCartObject.quantity;
+        
         let newCartObject = {}
             newCartObject.name = addName;
             newCartObject.price = addPrice;
+            newCartObject.quantity = 1;
             cart.push(newCartObject);
             console.log(cart);
 
-        
+        // increase quantity for item multiples
+        if (addName === cart[newCartObject.name]){
+            console.log("same name");
+            newCartObject.quantity++;
+            // add newCartQuantity to newCartObject?
+        }
+
         // generate name box
         let cartItemNameDisplay = document.createElement("p");
         cartItemNameDisplay.innerText = addName;
         cartNameHolder.appendChild(cartItemNameDisplay);
+        
         // generate quantity box
         let cartQuantityContainer = document.querySelector(".cart-change-quantity-container");
         let cartQuantity = document.querySelector(".cart-change-quantity");
         let quantityBox = cartQuantity.cloneNode(true);
         cartQuantityContainer.appendChild(quantityBox);
 
+        // remove extra quantity box --- NEEDS FIXING STILL -- 
+        // let cartQuantityList = document.querySelectorAll(".cart-change-quantity");
+        // console.log(cartQuantityList);
+        // for (let i = 0; i > cartQuantityList.length; i++){
+        //     cartQuantityList.pop();
+        // }
+        
+
         // generate price box
         let cartPriceDisplay = document.createElement("p");
-        cartPriceDisplay.innerText = addPrice;
+        cartPriceDisplay.innerText = `$${addPrice / 100}`;
         cartProductPriceHolder.appendChild(cartPriceDisplay);
         
 
@@ -89,11 +108,12 @@ right.addEventListener("click", (event) => {
         cartTotal.innerText = `Total $${grandTotal}`;
 
     }
-    // add slected item Name & price to cart
+    
     
 
 })
-    // add slected item Name & price to cart
+
+// TESTS VARIOUS
 
 // TERNARY OPERATOR FOR CC VALIDATION! 
 // user.input === number ? alert : submit
