@@ -18,7 +18,7 @@ let newTotal = 0;
 let right = document.querySelector(".right");
 let productCards = document.querySelectorAll(".products-card");
 
-// add to cart visual representation variables
+// shopping cart overlay visual representation variables
 let cart = [];
 let cartSubTotal = document.querySelector(".cart-sub-total");
 let cartTax = document.querySelector(".cart-tax");
@@ -27,13 +27,14 @@ let cartWrapper = document.querySelector(".cart-wrapper");
 let cartNameHolder = document.querySelector(".cart-product-name");
 let cartQuantityHolder = document. querySelector(".cart-change-quanity");
 let cartProductPriceHolder = document.querySelector(".cart-product-price");
-// IMPORTANT FOR CLASS
+let cartProductQuantity = document.querySelector(".cart-product-quantity");
 const shoppingCart = document.querySelector(".hidden");
-// IMPORTANT FOR CLASS
 
 
 
-// toggles shopping cart view
+
+
+// toggles shopping cart visibility
 viewCart.addEventListener("click", (event) => {
     event.preventDefault();
     let cartToggle = () => shoppingCart.classList.toggle("shopping-cart");
@@ -48,43 +49,55 @@ viewCart.addEventListener("click", (event) => {
 right.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart-button")){
         const addPrice = event.target.getAttribute("data-price")
-        const addName = event.target.getAttribute("data-name");
+        let addName = event.target.getAttribute("data-name");
         // can't initialize below
         // const newCartObjectQuantity = newCartObject.quantity;
         
         let newCartObject = {}
             newCartObject.name = addName;
             newCartObject.price = addPrice;
-            newCartObject.quantity = 1;
-            cart.push(newCartObject);
+            newCartObject.quantity = 0;
 
-        // increase quantity for item multiples
+
+        // increase quantity for item multiples in cart array
+        // also prevents from creating new cart array object
         let alreadyInCart = false;
         for (item of cart){
             if (addName === item.name){
                 alreadyInCart = true
                 item.quantity++;
+                mathPrice = parseInt(item.price);
+                item.price = mathPrice + mathPrice;
+                cartProductQuantity.innerText = item.quantity;
                 break;
             };
         }
-        
+        // use indexOf to find index of item for quantity?
         if (alreadyInCart == false){
             newCartObject.quantity = 1;
             cart.push(newCartObject);
-            
+             // generate price box in shopping cart overlay
+            let cartPriceDisplay = document.createElement("p");
+            cartPriceDisplay.innerText = `$${(addPrice) / 100}`;
+            cartProductPriceHolder.appendChild(cartPriceDisplay);
+             // generate name box
+            let cartItemNameDisplay = document.createElement("p");
+            cartItemNameDisplay.innerText = addName;
+            cartNameHolder.appendChild(cartItemNameDisplay);
+        
+            // generate quantity box
+            let cartQuantityContainer = document.querySelector(".cart-change-quantity-container");
+            let cartQuantity = document.querySelector(".cart-change-quantity");
+            let quantityBox = cartQuantity.cloneNode(true);
+            cartQuantityContainer.appendChild(quantityBox);
+
+            // update price box
+
+                
         };
         console.log(cart);
 
-        // generate name box
-        let cartItemNameDisplay = document.createElement("p");
-        cartItemNameDisplay.innerText = addName;
-        cartNameHolder.appendChild(cartItemNameDisplay);
-        
-        // generate quantity box
-        let cartQuantityContainer = document.querySelector(".cart-change-quantity-container");
-        let cartQuantity = document.querySelector(".cart-change-quantity");
-        let quantityBox = cartQuantity.cloneNode(true);
-        cartQuantityContainer.appendChild(quantityBox);
+       
 
         // remove extra quantity box --- NEEDS FIXING STILL -- 
         // let cartQuantityList = document.querySelectorAll(".cart-change-quantity");
@@ -92,15 +105,7 @@ right.addEventListener("click", (event) => {
         // for (let i = 0; i > cartQuantityList.length; i++){
         //     cartQuantityList.pop();
         // }
-        
-
-        // generate price box
-        let cartPriceDisplay = document.createElement("p");
-        cartPriceDisplay.innerText = `$${addPrice / 100}`;
-        cartProductPriceHolder.appendChild(cartPriceDisplay);
-        
-
-        // add in if name === name, item.quantity++, else create new object
+    
 
 
         newTotal += parseInt(addPrice) / 100;
