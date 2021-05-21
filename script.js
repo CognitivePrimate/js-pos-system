@@ -57,14 +57,23 @@ right.addEventListener("click", (event) => {
             newCartObject.price = addPrice;
             newCartObject.quantity = 1;
             cart.push(newCartObject);
-            console.log(cart);
 
         // increase quantity for item multiples
-        if (addName === cart[newCartObject.name]){
-            console.log("same name");
-            newCartObject.quantity++;
-            // add newCartQuantity to newCartObject?
+        let alreadyInCart = false;
+        for (item of cart){
+            if (addName === item.name){
+                alreadyInCart = true
+                item.quantity++;
+                break;
+            };
         }
+        
+        if (alreadyInCart == false){
+            newCartObject.quantity = 1;
+            cart.push(newCartObject);
+            
+        };
+        console.log(cart);
 
         // generate name box
         let cartItemNameDisplay = document.createElement("p");
