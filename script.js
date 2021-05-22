@@ -25,6 +25,7 @@ let cartTax = document.querySelector(".cart-tax");
 let cartTotal = document.querySelector(".cart-total");
 let cartWrapper = document.querySelector(".cart-wrapper");
 let cartNameHolder = document.querySelector(".cart-product-name");
+let cartNameHolderArray = document.querySelectorAll(".cart-product-name");
 let cartQuantityHolder = document. querySelector(".cart-change-quanity");
 let cartProductPriceHolder = document.querySelector(".cart-product-price");
 let cartProductQuantity = document.querySelector(".cart-product-quantity");
@@ -44,7 +45,7 @@ viewCart.addEventListener("click", (event) => {
 
 
 
-
+// ***CAN I ADD EVENT LISTENER HERE FOR QUANTITY CHANGE IN CART SINCE CART IS IN RIGHT HTML??
 // add to cart event
 right.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart-button")){
@@ -91,11 +92,21 @@ right.addEventListener("click", (event) => {
             let quantityBox = cartQuantity.cloneNode(true);
             cartQuantityContainer.appendChild(quantityBox);
 
+            // remove extra quantity box
+            let cartQuantityArray = document.querySelectorAll(".cart-change-quantity");
+            console.log(cartQuantityArray.length);
+            cartQuantityArray.length > cart.length ? cartQuantityArray.pop() : console.log("meow");
+
+
             // update price box
 
                 
         };
         console.log(cart);
+        // console.log(cartProductPriceArrray);
+        // console.log(cartProductPriceHolder.innerHTML.length);
+        
+
 
        
 
@@ -122,6 +133,10 @@ right.addEventListener("click", (event) => {
         cartTotal.innerText = `Total $${grandTotal}`;
 
     }
+    // TODO Figure out how to make ad subtract quantity buttons work -- maybe change event target focus to larger? does shopping cart z index affect?
+    if (event.target.classList.contains(".subtract")){
+        console.log("subtract");
+    };
     
     
 
