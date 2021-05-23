@@ -11,10 +11,9 @@
 }
 
 /* currently not on anything but possibly put onto .cartCard? */
-.hidden {
+.hidden, .checkout-hidden {
     max-height: 150rem;
-    display:none;
-    transition: 2s;
+    display: none;
 }
 
 .categories {
@@ -159,7 +158,8 @@ body {
     border-radius: .5rem;
     box-shadow: .2rem .2rem 1rem rgb(75, 75, 75, .5);
     margin-top: .5rem;
-    transition: .6s;
+    /* transition: .6s; */
+    transition: all 1s ease-out;
 }
 
 .add-to-cart-button:hover {
@@ -168,11 +168,6 @@ body {
     /* text-shadow: .25rem .25rem 2rem #000; */
     box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
     z-index: 5;
-}
-
-.add-to-cart-button:focus {
-    /* change to match color scheme */
-    background-color: red;
 }
 
 .right {
@@ -332,7 +327,7 @@ body {
     position: fixed;
     box-sizing: border-box;
     top: 14%;
-    min-height: 79%;
+    /* min-height: 79%; */
     display: flex;
     flex-direction: column;
     /* transform: translate(-50%, -50%); */
@@ -345,12 +340,12 @@ body {
     background: rgb(255, 255, 255);
     background: linear-gradient(
         to right bottom,
-    rgba(255,255,255,0.4),
-    rgba(255,255,255,0.7));
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0.4));
     width: 92vw;
-    height: 75vh;
+    height: 80vh;
     backdrop-filter: blur(1rem);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     transition: all 1s ease-in-out;
     animation: MoveUpDown .7s linear;
 
@@ -408,14 +403,61 @@ body {
 .cart-totals {
     display: flex;
     flex-direction: column;
-    justify-self: flex-start;
-    align-self: flex-end;
-    width: 100%;
+    align-self: flex-start;
+    width: 10rem;
+    position: absolute;
+    bottom: .25rem;
 }
 
 .cart-totals * {
     text-align: left;
     margin-left: 1rem;
+}
+
+.check-out-button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    background-color: #18314F;
+    color: #F3F7F7;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 0 1.25rem 1rem 0;
+    width: 8rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem 1rem rgb(75, 75, 75, .5);
+    margin-top: .5rem;
+    transition: all 1s ease-out;
+}
+
+.check-out-button:hover {
+    transform: scale(1.10);
+    transition: .6s;
+    box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
+}
+
+.check-out-menu {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(
+        to right bottom,
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.7));
+    width: 95vw;
+    height: 40vh;
+    backdrop-filter: blur(1rem);
+    border-radius: .5rem;
+    transition: all 1s ease-in-out;
+    animation: MoveUpDown .7s linear;
+    position: absolute;
+    top: 25%; 
+    box-shadow: 10rem 10rem 10rem 8rem rgba(75,75,75,0.62);
+    z-index: 8;
 }
 
 /* QUANTITY ICON STYLING BELOW MEDIA QUERIES */
