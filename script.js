@@ -29,7 +29,7 @@ let cartNameHolder = document.querySelector(".cart-product-name");
 let cartNameHolderArray = document.querySelectorAll(".cart-product-name");
 let cartQuantityHolder = document. querySelector(".cart-change-quanity");
 let cartProductPriceHolder = document.querySelector(".cart-product-price");
-// let cartProductQuantity = document.querySelector(".cart-product-quantity");
+let cartProductQuantity = document.querySelector(".cart-product-quantity");
 let cartPriceDisplay = document.createElement("p");
 
 // cart quantity container variables
@@ -38,10 +38,35 @@ const shoppingCart = document.querySelector(".hidden");
 let cartQuantity = document.querySelector(".cart-change-quantity");
 
 
-// checkout menu functionality
+// checkout menu total displays
 const checkoutMenu = document.querySelector(".checkout-hidden");
+let checkOutTotalDisplay = document.querySelector(".final-check-out-total");
+let checkOutTaxDisplay = document.querySelector(".final-check-out-tax");
+let checkOutSubtotalDisplay = document.querySelector(".final-check-out-subtotal");
+let checkOutCashInput = document.querySelector("#cash");
+console.log(checkOutCashInput.value);
+let checkOutChangeDisplay = document.querySelector(".change");
+// function to call total outside of listener scope and insert into checkout overlay
+// let change = () => parseInt(checkOutTotalDisplay) - parseInt(checkOutCashInput);
 
+checkoutMenu.addEventListener("click", (event) => {
+    function change(){
+        for (item of cart){
+            let newTotal = 0;
+            newTotal += (item.value * item.quantity);
+            let cashGiven = checkOutCashInput.value;
+            console.log(checkOutCashInput.value);
+            let changeDisplay = newTotal - cashGiven;
+            checkOutChangeDisplay.innerText = `Change: ${changeDisplay}`;
 
+        };
+    };
+});
+
+// checkOutChangeDisplay.innerText = `Change: $${change()}`;
+
+// TESTS
+console.log(parseInt(checkOutTotalDisplay.innerText));
 
 
 
@@ -59,8 +84,8 @@ viewCart.addEventListener("click", (event) => {
 // add to cart event
 right.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart-button")){
-        let addPrice = event.target.getAttribute("data-price")
-        let addName = event.target.getAttribute("data-name");
+        addPrice = event.target.getAttribute("data-price")
+        addName = event.target.getAttribute("data-name");
        
         // creating new object for cart array
         let newCartObject = {}
@@ -83,10 +108,10 @@ right.addEventListener("click", (event) => {
         createBox.appendChild(leftArrow);
 
         // add quantity box to box
-        let cartProductQuantity = document.createElement("span");
-        cartProductQuantity.setAttribute("class", "cart-product-quantity");
-        cartProductQuantity.innerText = newCartObject.quantity;
-        createBox.appendChild(cartProductQuantity);
+        let cartProductQuantityCreator = document.createElement("span");
+        cartProductQuantityCreator.setAttribute("class", "cart-product-quantity");
+        cartProductQuantityCreator.innerText = newCartObject.quantity;
+        createBox.appendChild(cartProductQuantityCreator);
 
         // add right arrow to box
         let rightArrow = document.createElement("i");
@@ -99,16 +124,19 @@ right.addEventListener("click", (event) => {
                     alreadyInCart = true
                     item.quantity++;
                     // ****ASK KYLE WHY CART QUANTITY BOX WON"T UPDATE****
-                    cartProductQuantity.innerText = item.quantity;
                     // console.log(cartProductQuantity);
+                    // cartProductQuantity.innerText = item.quantity;
+                   
                    
 
                     
                     mathPrice = parseInt(item.price);
                     item.price = mathPrice + mathPrice;
                         
-                
+                    
                     cartPriceDisplay.innerText = `$${(addPrice) * item.quantity / 100}`;
+                    // updating total on checkout display
+                    checkOutTotalDisplay.innerText = cartPriceDisplay.innerText;
                     break;
                 };        
             };       
@@ -124,6 +152,8 @@ right.addEventListener("click", (event) => {
                 cartPriceDisplay = document.createElement("p");
                 cartPriceDisplay.innerText = `$${(addPrice) / 100}`;
                 cartProductPriceHolder.appendChild(cartPriceDisplay);
+                // updating total on checkout display
+                checkOutTotalDisplay.innerText = cartPriceDisplay.innerText;
                 // generate name box
                 let cartItemNameDisplay = document.createElement("p");
                 cartItemNameDisplay.setAttribute("class", "name-in-cart")
@@ -139,13 +169,15 @@ right.addEventListener("click", (event) => {
         let grandTotal = newTotal + taxTotal;
 
         // All totals display
-        subTotal.innerText = `Subtotal: $${newTotal}`;
+        subTotal.innerText = `Subtotal: $${newTotal.toFixed(2)}`;
         tax.innerText = `Tax: $${taxTotal.toFixed(2)}`;
         total.innerText = `Total $${grandTotal}`;
         cartSubTotal.innerText = `Subtotal: $${newTotal}`;
         cartTax.innerText = `Tax: $${taxTotal.toFixed(2)}`;
         cartTotal.innerText = `Total $${grandTotal}`;
-
+        checkOutTotalDisplay.innerText = total.innerText;
+        checkOutTaxDisplay.innerText = tax.innerText;
+        checkOutSubtotalDisplay.innerText = subTotal.innerText; 
     };            
 
         // TODO Figure out how to make add subtract quantity buttons work -- maybe change event target focus to larger? does shopping cart z index affect?
@@ -156,12 +188,19 @@ right.addEventListener("click", (event) => {
 
         if (event.target.classList.contains("add")){
             
-        }
+        };
 
         // opens checkout menu overlay
         if (event.target.classList.contains("check-out-button")){
             checkoutMenu.classList.toggle("check-out-menu");
-        }
+        };
+
+        // closes checkoutmenu overlay
+        if (event.target.classList.contains("back-to-cart")){
+            console.log("yo");
+            checkoutMenu.classList.toggle("check-out-menu");
+        };
+        
 
 
 });

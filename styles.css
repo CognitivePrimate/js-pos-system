@@ -170,6 +170,11 @@ body {
     z-index: 5;
 }
 
+.add-to-cart-button:active {
+    transform: scale(1.0);
+    box-shadow: .5rem .5rem 1rem rgb(75, 75, 75, .5);
+}
+
 .right {
     display: flex;
     flex-direction: column;
@@ -437,28 +442,141 @@ body {
     box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
 }
 
+.check-out-button:active {
+    transform: scale(1.0);
+    box-shadow: .5rem .5rem 1rem rgb(75, 75, 75, .5);
+}
+
 .check-out-menu {
     display: flex;
+    flex-direction: column;
     align-self: center;
     justify-self: center;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 1rem;
     background: linear-gradient(
         to right bottom,
     rgba(255,255,255,0.4),
     rgba(255,255,255,0.7));
     width: 95vw;
-    height: 40vh;
+    height: 60vh;
     backdrop-filter: blur(1rem);
     border-radius: .5rem;
     transition: all 1s ease-in-out;
     animation: MoveUpDown .7s linear;
     position: absolute;
-    top: 25%; 
+    top: 15%; 
     box-shadow: 10rem 10rem 10rem 8rem rgba(75,75,75,0.62);
     z-index: 8;
 }
+
+.tender-type {
+    font-size: 1.1rem;
+    text-align: center;
+
+}
+
+.final-check-out-totals {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 10rem;
+    max-width: 17rem;
+    /* margin-bottom: 1rem; */
+
+}
+
+.final-check-out-tax, .final-check-out-subtotal {
+    font-size: 1.25rem;
+    margin: .10rem;
+    text-align: left;
+}
+
+.final-check-out-total {
+    font-size: 1.5rem;
+    margin: .10rem;
+    text-align: left;
+}
+
+.change-button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    background-color: #18314F;
+    color: #F3F7F7;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem 1rem rgb(75, 75, 75, .5);
+    transition: all 1s ease-out;
+    margin-top: 1rem;
+}
+
+.change-button:hover {
+    transform: scale(1.10);
+    transition: .6s;
+    box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
+}
+
+.cange-button:active {
+    transform: scale(1.0);
+    box-shadow: .5rem .5rem 1rem rgb(75, 75, 75, .5);
+}
+
+
+.tender-type-card {
+    margin-bottom: 2rem;
+}
+
+.final-check-out-button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    background-color: #18314F;
+    color: #F3F7F7;
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem 1rem rgb(75, 75, 75, .5);
+    transition: all 1s ease-out;
+}
+
+.final-check-out-button:hover {
+    transform: scale(1.10);
+    transition: .6s;
+    box-shadow: 1rem 1rem 1rem rgb(75, 75, 75, .5);
+}
+
+.back-to-cart {
+    text-align: center;
+    transition: all 1s ease-out;
+
+}
+
+.back-to-cart:hover {
+    transform: scale(1.10);
+    text-shadow: .25rem .25rem 1rem rgb(75, 75, 75, .5);
+}
+
+
+
+
+
+/* remove bars from numbers input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 /* QUANTITY ICON STYLING BELOW MEDIA QUERIES */
 @media only screen and (min-width: 600px){
