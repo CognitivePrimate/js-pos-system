@@ -46,6 +46,26 @@ let checkOutSubtotalDisplay = document.querySelector(".final-check-out-subtotal"
 let checkOutCashInput = document.querySelector("#cash");
 let checkOutChangeDisplay = document.querySelector(".change");
 
+// toggles checkoutmenu visibility
+shoppingCart.addEventListener("click", (event) => {
+    if (event.target.classList.contains("check-out-button")){
+        checkoutMenu.classList.toggle("check-out-menu");
+    };
+
+    if (event.target.classList.contains("back-to-store")){
+        console.log("cart");
+        shoppingCart.classList.toggle("shopping-cart");
+    };
+})
+
+// toggles shopping cart visibility
+viewCart.addEventListener("click", (event) => {
+    event.preventDefault();
+    let cartToggle = () => shoppingCart.classList.toggle("shopping-cart");
+    cartToggle();
+});
+
+
 //checkout menu functionality
 checkoutMenu.addEventListener("click", (event) => {
     // displays accurate change in checkout menu based on user input
@@ -71,17 +91,6 @@ checkoutMenu.addEventListener("click", (event) => {
 
 
 
-
-// checkOutChangeDisplay.innerText = `Change: $${change()}`
-
-
-
-// toggles shopping cart visibility
-viewCart.addEventListener("click", (event) => {
-    event.preventDefault();
-    let cartToggle = () => shoppingCart.classList.toggle("shopping-cart");
-    cartToggle();
-});
 
 // add to cart event
 right.addEventListener("click", (event) => {
@@ -169,10 +178,10 @@ right.addEventListener("click", (event) => {
         // All totals display
         subTotal.innerText = `Subtotal: $${newTotal.toFixed(2)}`;
         tax.innerText = `Tax: $${taxTotal.toFixed(2)}`;
-        total.innerText = `Total $${grandTotal}`;
-        cartSubTotal.innerText = `Subtotal: $${newTotal}`;
+        total.innerText = `Total $${grandTotal.toFixed(2)}`;
+        cartSubTotal.innerText = `Subtotal: $${newTotal.toFixed(2)}`;
         cartTax.innerText = `Tax: $${taxTotal.toFixed(2)}`;
-        cartTotal.innerText = `Total $${grandTotal}`;
+        cartTotal.innerText = `Total: $${grandTotal.toFixed(2)}`;
         checkOutTotalDisplay.innerText = total.innerText;
         checkOutTaxDisplay.innerText = tax.innerText;
         checkOutSubtotalDisplay.innerText = subTotal.innerText; 
@@ -188,10 +197,10 @@ right.addEventListener("click", (event) => {
             
         };
 
-        // opens checkout menu overlay
-        if (event.target.classList.contains("check-out-button")){
-            checkoutMenu.classList.toggle("check-out-menu");
-        };
+        // // opens checkout menu overlay
+        // if (event.target.classList.contains("check-out-button")){
+        //     checkoutMenu.classList.toggle("check-out-menu");
+        // };
 
         // closes checkoutmenu overlay --- may not work because overlay is not inside ".right"
         // if (event.target.classList.contains("back-to-cart")){

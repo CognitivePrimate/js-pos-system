@@ -13,18 +13,21 @@
     <body>
         
         <div class="main">
-            <div class="left"> 
-                <h1 id="store-name">Store Name Here</h1>
-
+            <div class="left">
+                <div class="store-name-box"> 
+                    <h1 id="store-name">Store Name Here</h1>    
+                </div>
+                <div class="view-cart">
+                    <a href="#" ><img class="cart-image" src="./images/emptyCart.svg"></a>
+                    <a href="#"> <View class="view-cart-text">View Cart</h4></a>
+                </div>
                 <div class="check-out-totals">
+                    
                     <h3 class="sub-total">Subtotal:</h3>
                     <h3 class="tax">Tax:</h3>
                     <h2 class="total">Total:</h2>
                 </div>
-            <div class="view-cart">
-                    <a href="#" ><img class="cart-image" src="./images/emptyCart.svg"></a>
-                    <a href="#"> <View class="view-cart-text">View Cart</h4></a>
-                </div>
+            
             </div>
             
             
@@ -79,7 +82,7 @@
                     </div>                           
 
                 </section>
-                <!-- test card -->
+            
                 <section class="row-three">
                     <h1 class="categories">Category</h1> 
                     <div class="products-card">
@@ -153,7 +156,7 @@
                     </div>                               
                 </section>
 
-                <!-- shopping cart to toggle -->
+                <!-- shopping cart to toggle
                 <div class="hidden">
                     <h1 class="cart-header">Shopping Cart</h1>
                     
@@ -170,7 +173,7 @@
                         <h2 class="cart-total">Total:</h2>
                     </div>
                         <button class="check-out-button" type="button">Check Out</button>
-                </div>
+                </div> -->
                 
                 
                 
@@ -182,6 +185,27 @@
 
 
         </div>
+        
+        <!-- shopping cart to toggle -->
+        <div class="hidden">
+            <h1 class="cart-header">Shopping Cart</h1>
+            
+            <div class="cart-wrapper">
+                <div class="cart-product-name"></div>
+                <div class="cart-change-quantity-container"></div>
+                <div class="cart-product-price"></div>
+            </div>
+            
+            
+            <div class="cart-totals">
+                <h3 class="cart-sub-total">Subtotal:</h3>
+                <h3 class="cart-tax">Sales Tax:</h3>
+                <h2 class="cart-total">Total:</h2>
+            </div>
+                <button class="check-out-button" type="button">Check Out</button>
+                <p class="back-to-store">Back to Store</p>
+        </div>
+
         <!-- checkout menu to toggle -->
         <div class="checkout-hidden">  
             <form>
@@ -210,7 +234,7 @@
                     <input type="number" id="cvv" name="cvv" placeholder="000"><br>
                 </div>
                 <button class="final-check-out-button" type="submit">Submit Payment</button>
-                <p class="back-to-cart">Back to Cart</p>
+                <p class="back-to-cart">Back to Store</p>
 
             </form>
         </div>
