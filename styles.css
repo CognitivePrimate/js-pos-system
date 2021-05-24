@@ -36,6 +36,17 @@ a {
     text-decoration: none;
 }
 
+input {
+    border-radius: .2rem;
+    border: none;
+}
+
+input:focus {
+    background: #F3F7F7;
+    /* HOW TO GET RID OF BORDER? */
+    border: none;
+}
+
 
 h1 {
     font-size: 1.10rem;
@@ -481,12 +492,12 @@ body {
 .final-check-out-totals {
     display: flex;
     align-self: flex-end;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: flex-start;
     min-width: 10rem;
     max-width: 17rem;
-    /* margin-bottom: 1rem; */
+    margin-top: 1rem;
 
 }
 
@@ -527,6 +538,12 @@ body {
 .cange-button:active {
     transform: scale(1.0);
     box-shadow: .5rem .5rem 1rem rgb(75, 75, 75, .5);
+}
+
+.change {
+    margin-top: 0;
+    text-align: center;
+    font-weight: bolder;
 }
 
 
@@ -660,7 +677,8 @@ input::-webkit-inner-spin-button {
         backdrop-filter: blur(1rem); */
         width: 60vw;
         flex-direction: row;
-        transform: translate3d(0,0);
+        /* overflow: scroll; */
+        /* transform: translate3d(0,0); */
         /* remove if circles aren't present */
         backdrop-filter: blur(1rem);
     }
@@ -674,15 +692,10 @@ input::-webkit-inner-spin-button {
         flex: 1;
         position:relative;
         top: 0;
-        width: 25%;
+        max-width: 25%;
         border-radius: 1rem 0 0 1rem;
-        box-shadow: .2rem .2rem .5rem rgba(103, 102, 122, 0.2);
         height: 100%;
         padding: 2rem;
-        background: linear-gradient(
-            to right bottom,
-        rgba(255,255,255,0.5),
-        rgba(255,255,255,0.2));
     }
 
     .check-out-totals {
@@ -690,21 +703,25 @@ input::-webkit-inner-spin-button {
         flex-direction: column;
         margin-top: 4rem;
         align-self: flex-start;
-        margin-right: 3rem;
+        margin-right: 0rem;
+        width: 100%;
     }
 
-    .subtotal .tax .total {
+    .sub-total, .tax, .total {
         text-align: left;
-        margin: 1rem 0;
+        margin: .5rem 0;
     }
 
     .view-cart {
         margin: 3rem 0 0 0;
         border-radius: 2rem;
         padding: 1rem 4rem;
+        margin-top: 1rem;
+        width: 80%;
     }
 
     .cart-image {
+        display: flex;
         height: 5rem;
     }
 

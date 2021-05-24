@@ -44,29 +44,35 @@ let checkOutTotalDisplay = document.querySelector(".final-check-out-total");
 let checkOutTaxDisplay = document.querySelector(".final-check-out-tax");
 let checkOutSubtotalDisplay = document.querySelector(".final-check-out-subtotal");
 let checkOutCashInput = document.querySelector("#cash");
-console.log(checkOutCashInput.value);
 let checkOutChangeDisplay = document.querySelector(".change");
-// function to call total outside of listener scope and insert into checkout overlay
-// let change = () => parseInt(checkOutTotalDisplay) - parseInt(checkOutCashInput);
 
+//checkout menu functionality
 checkoutMenu.addEventListener("click", (event) => {
-    function change(){
+    // displays accurate change in checkout menu based on user input
+    if (event.target.classList.contains("change-button")){
+        let newTotal = 0;
         for (item of cart){
-            let newTotal = 0;
-            newTotal += (item.value * item.quantity);
+            newTotal += (((parseInt(item.price) * item.quantity) / 100) * 1.06);
+            console.log(newTotal);
             let cashGiven = checkOutCashInput.value;
             console.log(checkOutCashInput.value);
-            let changeDisplay = newTotal - cashGiven;
-            checkOutChangeDisplay.innerText = `Change: ${changeDisplay}`;
+            let changeDisplay = cashGiven - newTotal;
+            console.log(changeDisplay);
+            checkOutChangeDisplay.innerText = `Change: $${changeDisplay.toFixed(2)}`;
 
         };
     };
+    if (event.target.classList.contains("back-to-cart")){
+        console.log("yo");
+        checkoutMenu.classList.toggle("check-out-menu");
+        shoppingCart.classList.toggle("shopping-cart");
+    };
 });
 
-// checkOutChangeDisplay.innerText = `Change: $${change()}`;
 
-// TESTS
-console.log(parseInt(checkOutTotalDisplay.innerText));
+
+
+// checkOutChangeDisplay.innerText = `Change: $${change()}`
 
 
 
@@ -77,15 +83,11 @@ viewCart.addEventListener("click", (event) => {
     cartToggle();
 });
 
-
-
-
-// ***CAN I ADD EVENT LISTENER HERE FOR QUANTITY CHANGE IN CART SINCE CART IS IN RIGHT HTML??
 // add to cart event
 right.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart-button")){
-        addPrice = event.target.getAttribute("data-price")
-        addName = event.target.getAttribute("data-name");
+        let addPrice = parseInt(event.target.getAttribute("data-price"));
+        let addName = event.target.getAttribute("data-name");
        
         // creating new object for cart array
         let newCartObject = {}
@@ -123,18 +125,14 @@ right.addEventListener("click", (event) => {
                 if (addName === item.name){
                     alreadyInCart = true
                     item.quantity++;
+                    let newItemPrice = parseInt(item.quantity) * parseInt(addPrice / 100).toFixed(2);
+
                     // ****ASK KYLE WHY CART QUANTITY BOX WON"T UPDATE****
                     // console.log(cartProductQuantity);
                     // cartProductQuantity.innerText = item.quantity;
-                   
-                   
-
-                    
-                    mathPrice = parseInt(item.price);
-                    item.price = mathPrice + mathPrice;
                         
                     
-                    cartPriceDisplay.innerText = `$${(addPrice) * item.quantity / 100}`;
+                    cartPriceDisplay.innerText = `$${newItemPrice.toFixed(2)}`;
                     // updating total on checkout display
                     checkOutTotalDisplay.innerText = cartPriceDisplay.innerText;
                     break;
@@ -150,7 +148,7 @@ right.addEventListener("click", (event) => {
                 cart.push(newCartObject);
                 // generate price box in shopping cart overlay
                 cartPriceDisplay = document.createElement("p");
-                cartPriceDisplay.innerText = `$${(addPrice) / 100}`;
+                cartPriceDisplay.innerText = `$${(addPrice / 100).toFixed(2)}`;
                 cartProductPriceHolder.appendChild(cartPriceDisplay);
                 // updating total on checkout display
                 checkOutTotalDisplay.innerText = cartPriceDisplay.innerText;
@@ -164,7 +162,7 @@ right.addEventListener("click", (event) => {
         console.log(cart);
     
         // totals math
-        newTotal += parseInt(addPrice) / 100;
+        newTotal += addPrice / 100;
         let taxTotal = .06 * newTotal;
         let grandTotal = newTotal + taxTotal;
 
@@ -195,11 +193,11 @@ right.addEventListener("click", (event) => {
             checkoutMenu.classList.toggle("check-out-menu");
         };
 
-        // closes checkoutmenu overlay
-        if (event.target.classList.contains("back-to-cart")){
-            console.log("yo");
-            checkoutMenu.classList.toggle("check-out-menu");
-        };
+        // closes checkoutmenu overlay --- may not work because overlay is not inside ".right"
+        // if (event.target.classList.contains("back-to-cart")){
+        //     console.log("yo");
+        //     checkoutMenu.classList.toggle("check-out-menu");
+        // };
         
 
 
